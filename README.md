@@ -1,49 +1,16 @@
-# Bitshares websocket interface (bitsharesjs-ws)
+# SBit websocket interface (sbitjs-ws)
 
-Pure JavaScript Bitshares websocket library for node.js and browsers. Can be used to easily connect to and obtain data from the Bitshares blockchain via public apis or local nodes.
-
-Credit for the original implementation goes to [jcalfeee](https://github.com/jcalfee).
-
-[![npm version](https://img.shields.io/npm/v/bitsharesjs-ws.svg?style=flat-square)](https://www.npmjs.com/package/bitsharesjs-ws)
-[![npm downloads](https://img.shields.io/npm/dm/bitsharesjs-ws.svg?style=flat-square)](https://www.npmjs.com/package/bitsharesjs-ws)
-
+Pure JavaScript SBit websocket library for node.js and browsers. Can be used to easily connect to and obtain data from the SBit blockchain via public apis or local nodes.
 
 ## Setup
 
 This library can be obtained through npm:
 ```
-npm install bitsharesjs-ws
+npm install sbitjs-ws
 ```
-
-## Usage
-
-Several examples are available in the /examples folder, and the tests in /test also show how to use the library.
-
-Browser bundles are provided in /build/, for testing purposes you can access this from rawgit:
-
-```
-<script type="text/javascript" src="https://cdn.rawgit.com/bitshares/bitsharesjs-ws/build/bitsharesjs-ws.js" />
-```
-
-A variable bitshares_ws will be available in window.
-
-For use in a webpack/browserify context, see the example below for how to open a websocket connection to the Openledger API and subscribe to any object updates:
-
-```
-var {Apis} = require("bitsharesjs-ws");
-Apis.instance("wss://bitshares.openledger.info/ws", true).init_promise.then((res) => {
-    console.log("connected to:", res[0].network);
-    Apis.instance().db_api().exec( "set_subscribe_callback", [ updateListener, true ] )
-});
-
-function updateListener(object) {
-    console.log("set_subscribe_callback:\n", object);
-}
-```
-The `set_subscribe_callback` callback (updateListener) will be called whenever an object on the blockchain changes or is removed. This is very powerful and can be used to listen to updates for specific accounts, assets or most anything else, as all state changes happen through object updates. Be aware though that you will receive quite a lot of data this way.
 
 # Witness node endpoints
-This is a non-exhaustive list of endpoints available from the witness_node executable, which provides the API server of Bitshares.
+This is a non-exhaustive list of endpoints available from the witness_node executable, which provides the API server of SBit.
 
 ## database_api
 https://github.com/bitshares/bitshares-core/blob/master/libraries/app/database_api.cpp

@@ -1,7 +1,7 @@
 {
-  "name": "bitsharesjs-ws",
-  "version": "1.1.7",
-  "description": "Pure JavaScript Bitshares/Graphene websocket interface for node.js and browsers.",
+  "name": "sbitjs-ws",
+  "version": "1.0.6",
+  "description": "Pure JavaScript SBit websocket interface for node.js and browsers.",
   "browser": {
     "ws": false
   },
@@ -15,21 +15,15 @@
     "build-es": "BABEL_ENV=es babel ./lib -d es",
     "postbuild": "npm run browserify && npm run build-es",
     "prepublish": "npm run build",
-    "browserify": "NODE_ENV=production browserify cjs/src/ApiInstances.js --standalone bitshares_ws -o build/bitsharesjs-ws.js -d",
-    "postbrowserify": "NODE_ENV=production uglifyjs --compress --mangle --sequences --drop_console --mangle-props --screw-ie8 --output build/bitsharesjs-ws.min.js -- build/bitsharesjs-ws.js"
+    "browserify": "NODE_ENV=production browserify cjs/src/ApiInstances.js --standalone sbit_ws -o build/sbitjs-ws.js -d",
+    "postbrowserify": "NODE_ENV=production uglifyjs --compress --mangle --sequences --drop_console --mangle-props --screw-ie8 --output build/sbitjs-ws.min.js -- build/sbitjs-ws.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bitshares/bitsharesjs-ws.git"
+    "url": "git+https://github.com/sbit-team/sbitjs-ws.git"
   },
-  "author": "Sigve Kvalsvik <bitsharesblocks@gmail.com> (https://github.com/svk31)",
-  "contributors": [
-    "James Calfee <james@jcalfee.info> (https://github.com/jcalfee/)"
-  ],
+  "author": "SBit",
   "license": "BSD-2-Clause-FreeBSD",
-  "bugs": {
-    "url": "https://github.com/bitshares/bitsharesjs-ws/issues"
-  },
   "engines": {
     "node": ">= 6.0.0"
   },
