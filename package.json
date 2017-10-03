@@ -1,7 +1,8 @@
 {
   "name": "sbitjs-ws",
-  "version": "1.0.6",
+  "version": "1.0.9",
   "description": "Pure JavaScript SBit websocket interface for node.js and browsers.",
+  "keywords": ["sbit", "blockchain"],
   "browser": {
     "ws": false
   },
